@@ -40,7 +40,7 @@ aualine/
 │ └─ deploy.sh # Скрипт деплоя
 ├─ backups/
 ├─ logs/
-├─ .env 
+├─ example.env 
 ├─ .gitignore
 └─ README.md
 ```
@@ -72,8 +72,8 @@ aualine/
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/username/aualine.git
-cd aualine
+git clone https://github.com/nurik125/AuaLine-website.git
+cd AuaLine-website
 ```
 2. Скопируйте пример ```.env```:
 
@@ -81,7 +81,7 @@ cd aualine
 cp config/example.env .env
 ```
 
-3. Отредактируйте ```.env``` и укажите:
+3. Отредактируйте ```example.env``` и укажите:
 ```env
 WHATSAPP_NUMBER="+10086907873"
 ADMIN_EMAIL="example@mail.com"
@@ -112,7 +112,7 @@ http://localhost:8000
 - Email
 - Сообщение
 
-Письма отправляются через SMTP, настройки которого указаны в ```.env```.
+Письма отправляются через SMTP, настройки которого указаны в ```example.env```.
 Все обращения также сохраняются в ```logs/contacts.log```.
 
 ---
