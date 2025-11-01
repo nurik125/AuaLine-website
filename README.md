@@ -153,6 +153,11 @@ bash scripts/backup.sh
 
 В доработке...
 
+## 🗂️ Note:
+> Some directories contain a `.gitkeep` file to ensure folder structure is preserved in Git.
+> You can safely delete these once real files are added.
+
+
 ## 👨‍💻 Автор / Контакт
 
 **Разработка:** команда AuaLine Dev
