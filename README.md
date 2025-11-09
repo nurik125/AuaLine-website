@@ -7,7 +7,7 @@
 
 ## 📁 Структура проекта
 ```shell
-aualine/
+AuaLine-website/
 ├─ public/ # Публичные страницы (основной сайт)
 │ ├─ index.html # Главная страница
 │ ├─ assets/
