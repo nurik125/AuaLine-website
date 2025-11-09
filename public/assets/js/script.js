@@ -48,7 +48,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all elements that should animate
-const animatedElements = document.querySelectorAll('.stat-item, .product-card, .tech-card, .contact-card, .how-it-works');
+const animatedElements = document.querySelectorAll('.stat-item, .product-card, .tech-card, .contact-card, .how-it-works, .contact-form');
 animatedElements.forEach(el => observer.observe(el));
 
 // Counter animation for statistics
@@ -106,6 +106,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
+/* For now removed 
 // Product card 3D tilt effect
 const productCards = document.querySelectorAll('.product-card');
 
@@ -114,77 +115,21 @@ productCards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
+        
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-
+        
         const rotateX = (y - centerY) / 10;
         const rotateY = (centerX - x) / 10;
-
+        
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
     });
-
+    
     card.addEventListener('mouseleave', () => {
         card.style.transform = '';
     });
 });
-
-// Add to cart animation
-const cartButtons = document.querySelectorAll('.btn-primary');
-const cartCount = document.querySelector('.cart-count');
-let count = 0;
-
-cartButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        // Don't add to cart for notify button
-        if (button.textContent.includes('Уведомить')) return;
-
-        // Create floating animation
-        const rect = button.getBoundingClientRect();
-        const cartIcon = document.querySelector('.cart-icon');
-        const cartRect = cartIcon.getBoundingClientRect();
-
-        // Create a clone of the product icon for animation
-        const flyingIcon = document.createElement('div');
-        flyingIcon.innerHTML = button.querySelector('svg').outerHTML;
-        flyingIcon.style.position = 'fixed';
-        flyingIcon.style.left = rect.left + 'px';
-        flyingIcon.style.top = rect.top + 'px';
-        flyingIcon.style.width = '24px';
-        flyingIcon.style.height = '24px';
-        flyingIcon.style.zIndex = '9999';
-        flyingIcon.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        flyingIcon.style.pointerEvents = 'none';
-        flyingIcon.style.color = 'var(--color-primary)';
-
-        document.body.appendChild(flyingIcon);
-
-        // Trigger animation
-        setTimeout(() => {
-            flyingIcon.style.left = cartRect.left + 'px';
-            flyingIcon.style.top = cartRect.top + 'px';
-            flyingIcon.style.transform = 'scale(0)';
-            flyingIcon.style.opacity = '0';
-        }, 10);
-
-        // Update cart count
-        setTimeout(() => {
-            count++;
-            cartCount.textContent = count;
-            cartIcon.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                cartIcon.style.transform = '';
-            }, 200);
-            flyingIcon.remove();
-        }, 800);
-
-        // Button feedback
-        button.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            button.style.transform = '';
-        }, 100);
-    });
-});
+*/
 
 // Tech cards stagger animation
 const techCards = document.querySelectorAll('.tech-card');
@@ -258,6 +203,9 @@ const createCursorGlow = () => {
 
 createCursorGlow();
 
+
+/* For now removed 
+
 // Magnetic effect for buttons
 const buttons = document.querySelectorAll('.btn');
 
@@ -266,14 +214,16 @@ buttons.forEach(button => {
         const rect = button.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-
+        
         button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
     });
-
+    
     button.addEventListener('mouseleave', () => {
         button.style.transform = '';
     });
 });
+
+*/
 
 // Smooth reveal animation on page load
 window.addEventListener('load', () => {
@@ -321,7 +271,7 @@ setTimeout(() => {
 }, 500);
 
 // Add ripple effect to cards on click
-document.querySelectorAll('.product-card, .tech-card').forEach(card => {
+document.querySelectorAll('.product-card, .tech-card, .contact-card').forEach(card => {
     card.addEventListener('click', function(e) {
         const ripple = document.createElement('div');
         const rect = this.getBoundingClientRect();
