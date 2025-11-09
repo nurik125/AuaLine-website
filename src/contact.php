@@ -2,9 +2,9 @@
 // ==============================
 // Подключение PHPMailer (вариант без Composer)
 // ==============================
-require __DIR__ . '/src/PHPMailer.php';
-require __DIR__ . '/src/SMTP.php';
-require __DIR__ . '/src/Exception.php';
+require __DIR__ . '/handlers/PHPMailer.php';
+require __DIR__ . '/handlers/SMTP.php';
+require __DIR__ . '/handlers/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
