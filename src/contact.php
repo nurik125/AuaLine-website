@@ -13,14 +13,15 @@ use PHPMailer\PHPMailer\Exception;
 // === НАСТРОЙКИ SMTP ===
 // ==============================
 // ВАЖНО: для Gmail нужен "пароль приложения" (16 символов), а не обычный пароль.
-$SMTP_HOST = 'smtp.gmail.com';
-$SMTP_PORT = 587; // STARTTLS
-$SMTP_USER = 'islamnur250318@gmail.com';   // <- замени на ваш служебный ящик
-$SMTP_PASS = 'zrxs apdo ovsm qxwm';     // <- пароль приложения БЕЗ пробелов
+
+$SMTP_HOST = getenv('SMTP_HOST');
+$SMTP_PORT = getenv('SMTP_PORT'); // STARTTLS
+$SMTP_USER = getenv('SMTP_USER');   // <- замени на ваш служебный ящик
+$SMTP_PASS = getenv('SMTP_PASS');     // <- пароль приложения БЕЗ пробелов
 
 // Куда получать заявки
-$TO_EMAIL = 'islamnurkh@gmail.com';
-$TO_NAME  = 'AuaLine Inbox';
+$TO_EMAIL = getenv('TO_EMAIL');
+$TO_NAME  = getenv('TO_NAME');
 
 // Имя отправителя (видно у получателя)
 $FROM_NAME = 'AuaLine Forms';

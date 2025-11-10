@@ -1,3 +1,16 @@
+<?php
+    // 1. Get the absolute file system path to the directory where THIS file (index.php) resides.
+    // e.g., /home/username/public_html
+    $current_dir = __DIR__;
+
+    // 2. Get the path to the main hosting account root directory.
+    // This moves UP one level from /public_html/ to /home/username/
+    $root_dir = dirname($current_dir);
+    require $root_dir.'/src/env.php';
+
+    $whatsapp = getenv("WHATSAPP");
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -92,7 +105,7 @@
                         <p class="product-description">Универсальный чёрный тонер из переработанного смога</p>
                     </div>
                     <div class="product-price">2 500 ₸</div>
-                    <a class="btn btn-primary btn-block" target="_blank" href="https://wa.me/77086907873?text=Здравствуйте%2C%20я%20хочу%20купить%20Эко-тонер%20AuaLine.%20">
+                    <a class="btn btn-primary btn-block" target="_blank" href="https://wa.me/<?=$whatsapp?>?text=Здравствуйте%2C%20я%20хочу%20купить%20Эко-тонер%20AuaLine.%20">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart h-5 w-5">
                             <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
                             <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
@@ -114,7 +127,7 @@
                         <p class="product-description">Премиум картридж с увеличенным ресурсом</p>
                     </div>
                     <div class="product-price">8 500 ₸</div>
-                    <a class="btn btn-primary btn-block" target="_blank" href="https://wa.me/77086907873?text=Здравствуйте%2C%20я%20хочу%20купить%20Картридж%20AUA-X200.%20">
+                    <a class="btn btn-primary btn-block" target="_blank" href="https://wa.me/<?=$whatsapp?>?text=Здравствуйте%2C%20я%20хочу%20купить%20Картридж%20AUA-X200.%20">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart h-5 w-5">
                             <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
                             <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
@@ -136,7 +149,7 @@
                         <p class="product-description">Яркие цвета на основе чистых технологий</p>
                     </div>
                     <div class="product-price">3 200 ₸</div>
-                    <a class="btn btn-primary btn-block" target="_blank" href="https://wa.me/77086907873?text=Здравствуйте%2C%20я%20хочу%20купить%20Эко-краску%20Lime%20Series.%20">
+                    <a class="btn btn-primary btn-block" target="_blank" href="https://wa.me/<?=$whatsapp?>?text=Здравствуйте%2C%20я%20хочу%20купить%20Эко-краску%20Lime%20Series.%20">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart h-5 w-5">
                             <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
                             <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
@@ -158,7 +171,7 @@
                         <p class="product-description">Полный набор для эффективной работы</p>
                     </div>
                     <div class="product-price">25 000 ₸</div>
-                    <a class="btn btn-secondary btn-block coming-soon" target="_blank" href="https://wa.me/77086907873?text=Здравствуйте%2C%20я%20хочу%20купить%20Полный%20комплект.%20">
+                    <a class="btn btn-secondary btn-block coming-soon" target="_blank" href="https://wa.me/<?=$whatsapp?>?text=Здравствуйте%2C%20я%20хочу%20купить%20Полный%20комплект.%20">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
                             <path d="M10 3v14M17 10H3"/>
                         </svg>
@@ -250,7 +263,7 @@
                         </div>
                     </li>
                     <li class="contact-item">
-                        <a href="https://wa.me/77086907873?" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        <a href="https://wa.me/<?=$whatsapp?>?" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <div class="contact-card">
                                 <div class="contact-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
@@ -279,7 +292,7 @@
                     </li>
                 </ul>
                 
-                <form action="../src/contact.php" class="contact-form" method="post">
+                <form action="contact_proxy.php" class="contact-form" method="post">
                     <h3 class="contact-form-title">Отправить сообщение</h3>
                     <p class="contact-form-subtitle">Заполните форму и мы свяжемся с вами в течение 24 часов</p>
                     <div class="contact-form-group">
@@ -337,20 +350,6 @@
                         <h4>Мы в соцсетях</h4>
                         <ul class="footer-media footer-nav">
                             <li>
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="https://www.instagram.com/aualine.kz/" target="_blank" rel="noopener noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -360,7 +359,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.linkedin.com/company/aualine/" target="_blank" rel="noopener noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                                         <rect width="4" height="12" x="2" y="9"></rect>
@@ -369,7 +368,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://wa.me/77086907873?text=Здравствуйте%2C%20я%20хочу%20купить%20" target="_blank" rel="noopener noreferrer">
+                                <a href="https://wa.me/<?=$whatsapp?>?text=Здравствуйте%2C%20я%20хочу%20купить%20" target="_blank" rel="noopener noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M8.016,12.271A4.818,4.818,0,0,1,7,9.709a2.777,2.777,0,0,1,.867-2.066.911.911,0,0,1,.661-.31c.165,0,.33,0,.475.009s.356-.058.557.425.7,1.715.764,1.839a.453.453,0,0,1,.02.433,1.694,1.694,0,0,1-.247.414c-.124.144-.261.323-.372.433s-.253.258-.109.506A7.474,7.474,0,0,0,11,13.107a6.778,6.778,0,0,0,1.992,1.229c.248.124.393.1.537-.062s.619-.723.784-.971.331-.206.558-.124,1.445.682,1.692.806.413.186.475.289a2.072,2.072,0,0,1-.144,1.178,2.553,2.553,0,0,1-1.672,1.177,3.389,3.389,0,0,1-1.561-.1,14.282,14.282,0,0,1-1.412-.521A11.043,11.043,0,0,1,8.016,12.271ZM2.045,22l1.406-5.136a9.914,9.914,0,1,1,8.591,4.964h0A9.918,9.918,0,0,1,7.3,20.622ZM3.8,11.91a8.217,8.217,0,0,0,1.259,4.384l.2.312-.832,3.04,3.119-.818.3.178a8.223,8.223,0,0,0,4.194,1.148h0A8.24,8.24,0,1,0,3.8,11.91Z"/>
                                     </svg>
