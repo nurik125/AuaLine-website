@@ -1,5 +1,6 @@
 <?php
-    $env = file_get_contents(__DIR__."/.env");
+    $env_file = file_exists(__DIR__."/.env")? __DIR__."/.env" : __DIR__."/example.env";
+    $env = file_get_contents($env_file);
     $lines = explode("\n",$env);
 
     foreach($lines as $line){
