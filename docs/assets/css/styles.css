@@ -987,6 +987,14 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .media-article-title {
+        font-size: 10px;
+    }
+
+    .media-article-source {
+        font-size: 8px;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
