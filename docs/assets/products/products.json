@@ -1,0 +1,42 @@
+[
+  {
+    "id": "textile_paint_250ml",
+    "name": "Текстильная краска (250мл)",
+    "category": "Эко-краски",
+    "description": "Экологичная текстильная краска из переработанного смога",
+    "price": 2500,
+    "available": true,
+    "icon": "user",
+    "whatsapp_text": "Здравствуйте, я хочу купить текстильную краску."
+  },
+  {
+    "id": "cartridge_toner_1kg",
+    "name": "Тонер для картриджа (1кг)",
+    "category": "Тонеры",
+    "description": "Профессиональный тонер для принтеров и копировательных аппаратов",
+    "price": 8500,
+    "available": false,
+    "icon": "lock",
+    "whatsapp_text": "Здравствуйте, я хочу купить Тонер для картриджа."
+  },
+  {
+    "id": "acrylic_paint_250ml",
+    "name": "Акриловая краска (250мл)",
+    "category": "Эко-краски",
+    "description": "Яркие цвета на основе чистых технологий",
+    "price": 2500,
+    "available": true,
+    "icon": "card",
+    "whatsapp_text": "Здравствуйте, я хочу купить Акриловую краску."
+  },
+  {
+    "id": "green_printing_program_subscription",
+    "name": "Программа Green Printing (Подписка)",
+    "category": "ESG Сертификаты",
+    "description": "Программа устойчивой печати и выдача ESG сертификатов",
+    "price": 5990,
+    "available": true,
+    "icon": "shield",
+    "whatsapp_text": "Здравствуйте, я хочу купить ESG Сертификаты."
+  }
+]

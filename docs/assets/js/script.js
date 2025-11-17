@@ -1,3 +1,129 @@
+// Product Cards JSON
+
+import productsData from "../products/products.json" with { type: "json" };
+
+const productsGrid = document.querySelector('.products-grid');
+
+const icons = {
+  user: `
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+      <path d="M20 5c-2 0-4 1-5 3-1 1-2 3-2 5s1 4 2 5c1 2 3 3 5 3s4-1 5-3c1-1 2-3 2-5s-1-4-2-5c-1-2-3-3-5-3zm0 25c-8 0-15 4-15 8v2h30v-2c0-4-7-8-15-8z"/>
+    </svg>
+  `,
+  lock: `
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+      <path d="M30 15H25V10C25 7.24 22.76 5 20 5C17.24 5 15 7.24 15 10V15H10V35H30V15ZM20 25C18.34 25 17 23.66 17 22C17 20.34 18.34 19 20 19C21.66 19 23 20.34 23 22C23 23.66 21.66 25 20 25ZM22 15H18V10C18 8.9 18.9 8 20 8C21.1 8 22 8.9 22 10V15Z"/>
+    </svg>
+  `,
+  card: `
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+      <path d="M32 8H8C5.8 8 4 9.8 4 12V28C4 30.2 5.8 32 8 32H32C34.2 32 36 30.2 36 28V12C36 9.8 34.2 8 32 8ZM32 28H8V16H32V28ZM32 14H8V12H32V14Z"/>
+    </svg>
+  `,
+  shield: `
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+      <path d="M20 8L12 12V17C12 22.5 15.8 27.6 21 29C26.2 27.6 30 22.5 30 17V12L20 8ZM20 19.5C18.6 19.5 17.5 18.4 17.5 17C17.5 15.6 18.6 14.5 20 14.5C21.4 14.5 22.5 15.6 22.5 17C22.5 18.4 21.4 19.5 20 19.5Z"/>
+    </svg>
+  `
+};
+
+productsData.forEach(product => {
+
+    let newProduct = document.createElement('div');
+    newProduct.className = "product-card";
+    
+    let badge = document.createElement('div');
+    badge.className = "product-badge";
+
+    let icon = document.createElement('div');
+    icon.className = "product-icon";
+    icon.innerHTML = icons[product.icon];
+
+    let productName = document.createElement('h3');
+    productName.className = "product-name";
+    productName.textContent = product.name;
+
+    let productCategory = document.createElement('p');
+    productCategory.className = "product-category";
+    productCategory.textContent = product.category;
+
+    let productDescription = document.createElement('p');
+    productDescription.className = "product-description";
+    productDescription.textContent = product.description;
+
+    let productPrice = document.createElement('div');
+    productPrice.className = "product-price";
+    productPrice.textContent = Math.floor(product.price / 1000) + ' ' + product.price % 1000 + '₸';
+
+    let buyButton = document.createElement('a');
+    buyButton.className = "products-btn btn-block";
+    buyButton.href = "https://wa.me/77086907873?text=" + encodeURIComponent(product.whatsapp_text);
+    buyButton.target = '_blank';
+    buyButton.innerHTML = `
+                        <svg class='product-icon-svg' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart h-5 w-5">
+                            <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                        </svg>
+                        Купить`;
+
+    if (product.available) {
+        badge.classList.add('available');
+        badge.textContent = 'В наличии';
+
+        buyButton.classList.add('btn-primary');
+    } else {
+        badge.classList.add('coming-soon');
+        badge.textContent = 'Не в наличии';
+
+        buyButton.classList.add('btn-secondary');
+        buyButton.classList.add('coming-soon');
+    }
+
+    newProduct.appendChild(badge);
+    newProduct.appendChild(icon);
+    newProduct.appendChild(productName);
+    newProduct.appendChild(productCategory);
+    newProduct.appendChild(productDescription);
+    newProduct.appendChild(productPrice);
+    newProduct.appendChild(buyButton);
+    productsGrid.appendChild(newProduct);
+    
+});
+
+// Media Articles JSON
+
+import articlesData from "../articles/articles.json" with { type: "json" };
+
+const articlesContainer = document.querySelector('.media-articles');
+
+articlesData.forEach(article => {
+
+    let newArticle = document.createElement('a');
+    newArticle.className = "media-article-card";
+    newArticle.href = article.url;
+
+    let articleImg = document.createElement('div');
+    articleImg.className = "media-article-image";
+    articleImg.style.backgroundImage = `url(${article.image_path})`;
+    articleImg.style.backgroundPosition = 'center';
+
+    let articleTitle = document.createElement('h3');
+    articleTitle.className = "media-article-title";
+    articleTitle.textContent = article.title;
+
+    let articleSrc = document.createElement('span');
+    articleSrc.className = "media-article-source";
+    articleSrc.textContent = article.source;
+
+    newArticle.appendChild(articleImg);
+    newArticle.appendChild(articleTitle);
+    newArticle.appendChild(articleSrc);
+    articlesContainer.appendChild(newArticle);
+});
+
+
+
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -290,9 +416,6 @@ document.querySelectorAll('.product-card, .tech-card, .contact-card').forEach(ca
             animation: ripple 0.6s ease-out;
             pointer-events: none;
         `;
-
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
         this.appendChild(ripple);
 
         setTimeout(() => ripple.remove(), 600);
