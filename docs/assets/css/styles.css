@@ -1,3 +1,31 @@
+
+/* Lazy loading */
+img, source, video{
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+img[data-src]{
+    opacity: 0;
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+}
+
+.loaded{
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -382,11 +410,8 @@ body {
 /* Photos */
 .photo {
     max-width: 10vmax;
-    height: fit-content;
     min-width: 10vmin;
     margin-block: 50px;
-    align-self: flex-start;
-    min-height: auto;
 }
 
 /* Products Section */

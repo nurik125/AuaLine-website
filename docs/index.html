@@ -83,7 +83,7 @@
         <div class="container">
             <h2 class="section-title">Наши <span class="highlight">продукты</span></h2>
             <p class="section-subtitle">Экологичные решения для вашего бизнеса. Качество и забота о планете.</p>
-            <img src="assets/img/photo1.png" alt="" class="photo">
+            <img loading="lazy" data-src="assets/img/photo1.png" alt="product-image" class="photo">
             <div id="catalog" class="products-grid"></div>
         </div>
     </section>
@@ -158,8 +158,17 @@
     <!-- History section -->
     <section id="history" class="history">
         <h2 class="history-title">Наша <span class="highlight">история</span></h2>
-        <div class=" history-content container">
-            <video class="history-video" height="800" width="1200" src="assets/video/IMG_0104.mp4" controls></video>
+        <div class="history-content container">
+            <video 
+                preload="none"
+                style="border-radius: 10px;"
+                class="history-video"
+                height="800"
+                width="1200"
+                controls
+            >
+                <source data-src="assets/video/history.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
@@ -238,8 +247,8 @@
     <section id="ip" class="container ip">
         <h2 class="highlight ip-title">IP</h2>
         <p class="ip-subtitle">Наша технология получила защиту интеллектуальной собственности</p>
-        <img src="assets/img/patent-front-page.jpg" alt="" class="patent-page">
-        <img src="assets/img/patent-back-page.jpg" alt="" class="patent-page">
+        <img loading="lazy" data-src="assets/img/patent-front-page.jpg" alt="IP" class="patent-page">
+        <img loading="lazy" data-src="assets/img/patent-back-page.jpg" alt="IP" class="patent-page">
     </section>
 
     <!-- Footer -->
@@ -329,6 +338,7 @@
         </div>
     </div>
 
+    <script src="./assets/js/lazy-loading.js"></script>
     <script src="./assets/js/doc_listener.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
 </body>
