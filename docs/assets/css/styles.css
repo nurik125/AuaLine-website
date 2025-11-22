@@ -385,6 +385,8 @@ body {
     height: fit-content;
     min-width: 10vmin;
     margin-block: 50px;
+    align-self: flex-start;
+    min-height: auto;
 }
 
 /* Products Section */
