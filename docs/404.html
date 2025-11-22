@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | Aualine</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/404_style.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="./index.html" class="nav-brand">Aualine</a>
+            <ul class="nav-menu">
+                <li><a href="./index.html#home">Главная</a></li>
+                <li><a href="./index.html#catalog">Каталог</a></li>
+                <li><a href="./index.html#about">О нас</a></li>
+                <li><a href="./index.html#history">Наша история</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Error Page -->
+    <section class="error-page">
+        <div class="error-bg"></div>
+        <div class="error-content">
+            <div class="error-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Страница не найдена</h2>
+            <p class="error-message">
+                К сожалению, страница, которую вы ищете, не существует или была перемещена. 
+                Возможно, вы ввели неправильный адрес или страница была удалена.
+            </p>
+            <div class="error-actions">
+                <a href="./index.html" class="btn btn-primary">
+                    Вернуться на главную
+                    <svg class="mini" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                        <path d="M5 10h10M10 5l5 5-5 5"/>
+                    </svg>
+                </a>
+                <a href="./index.html#catalog" class="btn btn-secondary">
+                    Перейти в каталог
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/doc_listener.js"></script>
+</body>
+</html>
+

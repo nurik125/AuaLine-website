@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /index.php
+Disallow: /contact_proxy.php
+Disallow: /assets/
+
+Sitemap: https://www.aualine.kz/sitemap.xml
