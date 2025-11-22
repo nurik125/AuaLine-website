@@ -1,0 +1,95 @@
+.toxic-popup.activate{
+  opacity: 1;
+
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+
+/* Popup container */
+.toxic-popup {
+    height: fit-content;
+  position: fixed;
+  z-index: 10000;
+  right: 10px;
+  bottom: 10px;
+  width: 400px;
+  padding: 15px;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  opacity: 0;
+
+  transform: translateX(300px);
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+
+  transition: opacity 0.4s ease, transform 1s ease;
+  -webkit-transition: opacity 0.4s ease, transform 1s ease;
+  -moz-transition: opacity 0.4s ease, transform 1s ease;
+  -ms-transition: opacity 0.4s ease, transform 1s ease;
+  -o-transition: opacity 0.4s ease, transform 1s ease;
+
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* Header text */
+.toxic-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+}
+
+/* Body text */
+.toxic-message {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* Progress bar container */
+.toxic-progress {
+  width: 100%;
+  height: 5px;
+  background: var(--color-secondary);
+  border-radius: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+/* Progress bar animation */
+.toxic-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--color-primary);
+  transform-origin: left;
+}
+
+@media (max-width: 1250px) {
+    .toxic-popup{
+        right: 5px;
+    }
+}
+
+@media (max-width: 700px) {
+    .toxic-popup{
+        padding: 10px;
+        width: calc(100vw - 50px);
+        right: 5px;
+        bottom: 10px;
+    }
+
+    .toxic-header {
+        margin-bottom: 2px;
+    }
+
+    .toxic-message {
+        font-size: 12px;
+    }
+}

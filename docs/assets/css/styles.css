@@ -839,6 +839,10 @@ body {
     border: 1px solid var(--color-primary)
 }
 
+.contact-btn{
+    font-size: 12px;
+}
+
 /* Footer */
 .footer {
     padding: 60px 0 30px;

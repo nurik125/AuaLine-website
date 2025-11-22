@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aualine - Мы превращаем смог в краску</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/pop-up.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -227,7 +228,7 @@
                         <label class="contact-form-label" for="message">Сообщение</label>
                         <textarea class="contact-form-input" rows="8" name="message" id="message" placeholder="Ваше сообщение..."></textarea>  
                     </div>
-                    <button class="btn btn-block btn-primary" type="submit">Отправить сообщение</button>
+                    <button class="btn btn-block btn-primary contact-btn" id="form-btn" type="submit">Отправить сообщение</button>
                 </form>
             </div>
         </div>
@@ -316,6 +317,21 @@
         </div>
     </footer>
 
+    <div id="toxicPopup" class="toxic-popup">
+        <div class="toxic-header">
+            <span>Form Submitted Successfully</span>
+        </div>
+
+        <div class="toxic-message">
+            We received your message. This window will close automatically.
+        </div>
+
+        <div class="toxic-progress">
+            <div class="toxic-progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="./assets/js/doc_listener.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
 </body>
 </html>

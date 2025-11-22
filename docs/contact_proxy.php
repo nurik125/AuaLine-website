@@ -1,10 +1,15 @@
 <?php
 
 // Include the contact.php
-$contact = $root_dir . '/src/contact.php';
+try{
+    $contact = $root_dir . '/src/contact.php';
+    $status=1;
+} catch(Exception $e){
+    $status = 'Message: ' .$e->getMessage();
+}
 
-header("Location: index.php#contacts");
-
+// #contacts
+header("Location: index.php?status=$status");
 require_once $contact;
 
 exit;
